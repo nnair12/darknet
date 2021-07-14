@@ -61,14 +61,10 @@ import cv2
 
 kitti2yolotype_dict = {'Car': '0',
                        'Van': '0',
+                       'Truck': '0',
                        'Pedestrian': '1',
                        'Person_sitting': '1',
-                       'Cyclist': '2',
-                       'Truck': '3',
-                       'Tram': '6',
-                       'Misc': '6',
-                       'DontCare': '6'}
-
+                       'Cyclist': '1'}
 
 def kitti2yolo(kitti_label, img_height, img_width):
 
