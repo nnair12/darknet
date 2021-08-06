@@ -43,7 +43,7 @@ I have adapted Alex's implementation and trained it on the KITTI Dataset. I crea
   ```
 7. I created the files train.txt and test.txt in the `data/` directory. Each file contains the pngs to be included in the training and validation data, respectively.
 8. Since I trained using a GPU VM on Paperspace, I needed to modify some fields in the Makefile. I set `GPU=1` in the first few lines of Makefile.
-9. Now, I can start training. I use the following command: `./darknet detector map data/obj.data cfg/yolov3-kitti.cfg file darknet53.conv.74 -dont_show -ext_output < data/train.txt > data/result.txt`
+9. Now, I can start training. I use the following command: `./darknet detector data/obj.data cfg/yolov3-kitti.cfg file darknet53.conv.74 -dont_show -map -ext_output < data/train.txt > data/result.txt`
 10. The output gets saved in the newly created backup folder. The results for every 10000 iterations, as well as the best results (according to IOU) and most recent results are kept in the folder. I stopped training when I noticed decreasing performance every iteration. The resulting file was called yolov3-kitt_best.weights, which is too large to be included in the repository.
 
 ## Citation
