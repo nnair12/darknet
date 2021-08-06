@@ -1,6 +1,1 @@
-
-
-./darknet detector test ./cfg/coco.data ./cfg/yolov3.cfg ./yolov3.weights data/dog.jpg -i 0 -thresh 0.25
-
-
-
+./darknet detector train data/obj.data cfg/yolo-obj.cfg darknet53.conv.74 -map
