@@ -10,12 +10,17 @@ Manual: https://github.com/AlexeyAB/darknet/wiki
 
 ## Introduction
 
+Darknet is an implementation which allows users to customize their own YOLO weights file for use in a YOLO model. The user has the ability to determine their own dataset and consequently develop a weights file that is optimized for that data.
+
+AlexeyAB added to PJReddie's original code to allow for training on GPU. Since the amount of data is usually very large, training without a GPU will take a lot of time.
+
+I have adapted Alex's implementation and trained it on the KITTI Dataset. I created a VM with GPU capabilities on Paperspace in order to train a model using this codebase.
 
 ## Steps
 
 1. First, download a pretrained weights file. I used [darknet53.conv.74](https://pjreddie.com/media/files/darknet53.conv.74). Due to the size, this file is not included in the repository
 2. I then created the config file yolov3-kitti.cfg. It can be located in the `cfg/` directory.
-3. I created file `obj.names` in the directory `data/`, with objects names - each in new line
+3. I created file `obj.names` in the directory `data/`, with objects names - each in new line. Each word refers to the label corresponding with that line number (0-indexed).
   ```ini
   vehicle
   person
@@ -23,7 +28,7 @@ Manual: https://github.com/AlexeyAB/darknet/wiki
   ```
 4. I then created file `obj.data` in the directory `data/`, containing (where **classes = number of objects**):
   ```ini
-  classes = 2
+  classes = 3
   train  = data/train.txt
   valid  = data/test.txt
   names = data/obj.names
