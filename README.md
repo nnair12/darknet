@@ -35,7 +35,7 @@ I have adapted Alex's implementation and trained it on the KITTI Dataset. I crea
   backup = backup/
   ```
 5. Put image-files (.jpg) of your objects in the directory `data/obj/`. 000001.png is present in the directory as a sample.
-6. For each image in the directory, you need to create a text file (with the same name) that describes each object in that image. Give the label (as a number) followed by the coordinates for the box. 000001.txt is present in the directory as a sample.
+6. For each image in the directory, you need to create a text file (with the same name) that describes each object in that image. I wrote a script kitti2yolo.py (in the scripts/ directory) to convert the KITTI labels to labels readable by the darknet code. The format is: give the label (as a number) followed by the coordinates for the box. 000001.txt is present in the directory as a sample.
   ```ini
   0 0.4948309178743961 0.46086666666666665 0.02442834138486315 0.08759999999999998
   0 0.3266666666666667 0.51288 0.0291304347826087 0.0575466666666667
